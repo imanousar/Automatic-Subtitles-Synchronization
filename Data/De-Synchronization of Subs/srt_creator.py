@@ -11,7 +11,7 @@ elif(True):
     # check if its an .srt file
     subtitle = sys.argv[1]
     if(not subtitle.endswith(".srt")):
-        sys.exit("Excepted .srt file!")
+        sys.exit("Expected .srt file!")
 
 # shift the subtitles of the 2 seconds later - Window shifting
 os.system(" pysubs2 --shift 2s <"+subtitle+" >"+subtitle+"_shift_2sec.srt ")
