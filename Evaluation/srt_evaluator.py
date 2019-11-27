@@ -11,9 +11,23 @@ elif(True):
     if((not subtitles1.endswith(".srt")) or (not subtitles2.endswith(".srt"))):
         sys.exit("Expected .srt files!")
 
-subs1 = pysubs2.load(subtitles1)
-subs2 = pysubs2.load(subtitles2)
+try:
+    subs1 = pysubs2.load(subtitles1)
+except Exception as ex_1:
+    try:
+        subs1 = pysubs2.load(subtitles1, encoding="iso8859_7")
+    except Exception as ex_2:
+            print("Exceptions"+ex_1+ex_2)
+            sys.exit("Use utf-8 or iso8859_7 encoding for .srt file 1")
 
+try:
+    subs2 = pysubs2.load(subtitles2)
+except Exception as ex_1:
+    try:
+        subs2 = pysubs2.load(subtitles2, encoding="iso8859_7")
+    except Exception as ex_2:
+            print("Exceptions"+ex_1+ex_2)
+            sys.exit("Use utf-8 or iso8859_7 encoding for .srt file 2")
 
 if len(subs2) > len(subs1):
     subs1, subs2 = subs2, subs1

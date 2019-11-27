@@ -1,6 +1,5 @@
 import sys
 import shutil
-import os
 import pysubs2
 import random
 
@@ -15,7 +14,16 @@ elif(True):
 
 # shift the subtitles of the 3 seconds later - Window shifting
 subtitle = shutil.copyfile(subtitle, subtitle.split('.')[0]+"_shift_3sec.srt")
-subs = pysubs2.load(subtitle)
+
+
+try:
+    subs = pysubs2.load(subtitle)
+except Exception as ex_1:
+    try:
+        subs = pysubs2.load(subtitle, encoding="iso8859_7")
+    except Exception as ex_2:
+            print("Exceptions"+ex_1+ex_2)
+            sys.exit("Use utf-8 or iso8859_7 encoding")
 
 for line in subs:
     line.start -= 3000
@@ -28,7 +36,16 @@ for i in range(1, 4):
 
     limit = 0
     offset = 0
-    subs = pysubs2.load(shift_rand)
+    try:
+        subs = pysubs2.load(shift_rand)
+    except Exception as ex_1:
+        try:
+            subs = pysubs2.load(shift_rand, encoding="iso8859_7")
+        except Exception as ex_2:
+                print("Exceptions"+ex_1+ex_2)
+                sys.exit("Use utf-8 or iso8859_7 encoding")
+
+
     for line in subs:
         offset = int((line.start - limit) * random.uniform(0.3, 0.7)) + 1000
         if(offset > 6000):
