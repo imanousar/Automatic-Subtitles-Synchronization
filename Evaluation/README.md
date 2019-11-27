@@ -1,6 +1,7 @@
-## Install library
+## Install libraries
 
 pip install pysubs2
+pip install chardet
 
 ### Run script and replace file1 and file2 by the subs filenames (2 args)
 
