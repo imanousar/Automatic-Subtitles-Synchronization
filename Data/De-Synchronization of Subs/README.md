@@ -7,5 +7,5 @@ pip install pysubs2
 python srt_creator.py file.srt
 
 <br>
-Output 4 sub.srt files. The first one has 2 sec shifthing. The other 3 have 
+Output 4 sub.srt files. The first one has 3 sec shifthing. The other 3 have 
 a random shifting to left, different for each subtile in each .srt file
