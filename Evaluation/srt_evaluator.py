@@ -1,5 +1,23 @@
 import sys
 import pysubs2
+import chardet    
+import codecs
+import os
+
+def encodeToUTF8(oldFile,newFile):
+
+    # Initial Encoding - Detection
+    rawdata = open(oldFile, 'rb').read()
+    result = chardet.detect(rawdata)
+    old_enc = result['encoding']
+    
+    # Converting to UTF-8
+    with codecs.open(oldFile, 'r', encoding = old_enc) as file:
+      lines = file.read()
+    with codecs.open(newFile, 'w', encoding = 'utf8') as file:
+      file.write(lines)
+
+
 
 # check if the input data is exactly 2 subtitle files
 if(len(sys.argv) != 3):
@@ -11,30 +29,21 @@ elif(True):
     if((not subtitles1.endswith(".srt")) or (not subtitles2.endswith(".srt"))):
         sys.exit("Expected .srt files!")
 
-try:
-    subs1 = pysubs2.load(subtitles1)
-except Exception as ex_1:
-    try:
-        subs1 = pysubs2.load(subtitles1, encoding="iso8859_7")
-    except Exception as ex_2:
-            print("Exceptions"+ex_1+ex_2)
-            sys.exit("Use utf-8 or iso8859_7 encoding for .srt file 1")
+encodeToUTF8(subtitles1,"sub1.srt")
+encodeToUTF8(subtitles2,"sub2.srt")
+subtitles1 = "sub1.srt"
+subtitles2 = "sub2.srt"
 
-try:
-    subs2 = pysubs2.load(subtitles2)
-except Exception as ex_1:
-    try:
-        subs2 = pysubs2.load(subtitles2, encoding="iso8859_7")
-    except Exception as ex_2:
-            print("Exceptions"+ex_1+ex_2)
-            sys.exit("Use utf-8 or iso8859_7 encoding for .srt file 2")
+subs1 = pysubs2.load(subtitles1)
+subs2 = pysubs2.load(subtitles2)
+
 
 if len(subs2) > len(subs1):
     subs1, subs2 = subs2, subs1
 
 score = 0
 
-threshold = 1500  # msec
+threshold = 500  # msec
 
 j = 0
 k = 0
@@ -51,19 +60,19 @@ for i in range(len(subs1)-1):
     try:
         while subs2[j].start < subs1[i].start - threshold:
             j = j + 1
-
+    
         if subs2[j].start > subs1[i].start + threshold:
             startFlag = False
             j = j - 1
-
+    
         while subs2[k].end < subs1[i].end - threshold:
             k = k + 1
-
+    
         if subs2[k].end > subs1[i].end + threshold:
             startFlag = False
             k = k - 1
-
-        if startFlag is True and endFlag is True:
+    
+        if startFlag == True and endFlag == True:
             score = score + 1
         else:
             score = score - 1
@@ -75,3 +84,6 @@ print("Total Score: ", score)
 
 NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
 print("Accuracy: ", NormalizedScore*100, "%")
+
+os.remove("sub1.srt")
+os.remove("sub2.srt")
