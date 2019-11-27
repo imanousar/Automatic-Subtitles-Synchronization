@@ -14,12 +14,17 @@ elif(True):
         sys.exit("Expected .srt file!")
 
 # shift the subtitles of the 2 seconds later - Window shifting
-os.system(" pysubs2 --shift 2s <"+subtitle+" >"+subtitle+"_shift_2sec.srt ")
+subtitle = shutil.copyfile(subtitle, subtitle.split('.')[0]+"_shift_3sec.srt")
+subs = pysubs2.load(subtitle)
 
+for line in subs:
+    line.start -= 3000
+    line.end -= 3000
+subs.save(subtitle)
 
 # create a copy of the original file
 for i in range(1, 4):
-    shift_rand = shutil.copyfile(subtitle, subtitle.split('.')[0]+"_shift%d_rand.srt" % i)
+    shift_rand = shutil.copyfile(subtitle, subtitle.split('_')[0]+"_shift%d_rand.srt" % i)
 
     limit = 0
     offset = 0
