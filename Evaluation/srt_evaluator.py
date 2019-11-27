@@ -35,7 +35,7 @@ for i in range(len(subs1)-1):
         score = score - (len(subs1)-len(subs2))
         break
 
-while subs2[j].start < subs1[i].start - threshold:
+    while subs2[j].start < subs1[i].start - threshold:
         j = j + 1
 
     if subs2[j].start > subs1[i].start + threshold:
@@ -54,7 +54,7 @@ while subs2[j].start < subs1[i].start - threshold:
     else:
         score = score - 1
 
-print("Total Score: " , score)
+print("Total Score: ", score)
 
-NormalizedScore =  ( score+(len(subs1)-1) )/( 2*(len(subs1)-1) )
-print("Accuracy: " , NormalizedScore*100 , "%")
+NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
+print("Accuracy: ", NormalizedScore*100, "%")
