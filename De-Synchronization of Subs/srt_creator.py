@@ -13,7 +13,7 @@ elif(True):
     if(not subtitle.endswith(".srt")):
         sys.exit("Expected .srt file!")
 
-# shift the subtitles of the 2 seconds later - Window shifting
+# shift the subtitles of the 3 seconds later - Window shifting
 subtitle = shutil.copyfile(subtitle, subtitle.split('.')[0]+"_shift_3sec.srt")
 subs = pysubs2.load(subtitle)
 
