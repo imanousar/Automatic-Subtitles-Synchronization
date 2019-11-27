@@ -20,7 +20,7 @@ if len(subs2) > len(subs1):
 
 score = 0
 
-threshold = 500  # msec
+threshold = 1500  # msec
 
 j = 0
 k = 0
@@ -37,19 +37,19 @@ for i in range(len(subs1)-1):
     try:
         while subs2[j].start < subs1[i].start - threshold:
             j = j + 1
-    
+
         if subs2[j].start > subs1[i].start + threshold:
             startFlag = False
             j = j - 1
-    
+
         while subs2[k].end < subs1[i].end - threshold:
             k = k + 1
-    
+
         if subs2[k].end > subs1[i].end + threshold:
             startFlag = False
             k = k - 1
-    
-        if startFlag == True and endFlag == True:
+
+        if startFlag is True and endFlag is True:
             score = score + 1
         else:
             score = score - 1
