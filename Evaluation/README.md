@@ -11,5 +11,5 @@ Return accuracy and score of synchronization between the two
 input subtitles.
 
 
-<br>
+<br><br>
 The .srt files must be either in utf-8 or either in iso8859_7 encoding
