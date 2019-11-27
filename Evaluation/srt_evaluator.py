@@ -43,7 +43,7 @@ if len(subs2) > len(subs1):
 
 score = 0
 
-threshold = 500  # msec
+threshold = 1500  # msec
 
 j = 0
 k = 0
