@@ -6,8 +6,6 @@ Created on Wed Nov 27 15:25:19 2019
 """
 
 import sys
-import shutil
-import os
 import pysubs2
 
 # check if the input data is exactly 2 subtitle files
@@ -22,10 +20,19 @@ elif(True):
 
 subs1 = pysubs2.load(subtitles1)
 subs2 = pysubs2.load(subtitles2)
-score = 1
+
+
+if len(subs2)>len(subs1):
+    subs1 = pysubs2.load(subtitles2)
+    subs2 = pysubs2.load(subtitles1)
+
+print(len(subs1))
+print(len(subs2))
+
+score = 0
 
 threshold = 250 # msec
-i = 0
+
 j = 0
 k = 0
 
@@ -33,6 +40,12 @@ for i in range(len(subs1)-1):
     
     startFlag = True
     endFlag = True
+    
+    # if srt files have different number of subs
+    if j >= len(subs2)-1 or k >= len(subs2)-1 :
+        score = score - ( len(subs1)-len(subs2) )
+        break
+    
     
     while subs2[j].start < subs1[i].start - threshold:
         j = j + 1
@@ -55,5 +68,5 @@ for i in range(len(subs1)-1):
 
 print("Total Score: " , score)
 
-NormalizedScore = ((score+len(subs1))/(2*len(subs1)))
+NormalizedScore =  ( score+(len(subs1)-1) )/( 2*(len(subs1)-1) )
 print("Accuracy: " , NormalizedScore*100 , "%")
