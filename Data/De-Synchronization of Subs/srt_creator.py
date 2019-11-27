@@ -23,7 +23,7 @@ for i in range(1, 4):
 
     limit = 0
     offset = 0
-    subs = pysubs2.load(shift_rand, encoding="iso8859_7")  # include greek encoding
+    subs = pysubs2.load(shift_rand)
     for line in subs:
         offset = int((line.start - limit) * random.uniform(0.3, 0.7)) + 1000
         if(offset > 6000):
