@@ -14,6 +14,6 @@ Accuracy of synchronization between the two input subtitles.
 Overall descriptive conclusion of synchronization results.
 
 ## Notes
- 
-Sub-Dialogs, that are not in common between both files, are 
+
+Sub-Dialogs, that are not in common between both files, are
 skipped without affecting accuracy.
