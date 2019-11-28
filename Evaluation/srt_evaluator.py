@@ -38,7 +38,7 @@ subs1 = pysubs2.load(subtitles1)
 subs2 = pysubs2.load(subtitles2)
 
 
-if len(subs2) > len(subs1):
+if subs2[0].start  > subs1[0].start:
     subs1, subs2 = subs2, subs1
 
 score = 0
@@ -47,6 +47,9 @@ threshold = 1500  # msec
 
 j = 0
 k = 0
+maxReward = 1.5
+
+print("\nUnsynchronized Subs\n")
 
 for i in range(len(subs1)-1):
 
@@ -64,6 +67,8 @@ for i in range(len(subs1)-1):
         if subs2[j].start > subs1[i].start + threshold:
             startFlag = False
             j = j - 1
+        else:
+            d = abs(subs2[j].start - subs1[i].start)/2
     
         while subs2[k].end < subs1[i].end - threshold:
             k = k + 1
@@ -71,19 +76,33 @@ for i in range(len(subs1)-1):
         if subs2[k].end > subs1[i].end + threshold:
             startFlag = False
             k = k - 1
+        else:
+            d = d + abs(subs2[k].end - subs1[i].end)/2
     
         if startFlag == True and endFlag == True:
-            score = score + 1
+            score = score + 1 # maxReward*(1-d/threshold) # + 1
         else:
             score = score - 1
+            print("Check sub",i,"( minute:", int(subs1[i].start/60000),")",":",subs1[i].text )
     except IndexError:
-        print("Subs out of index")
+        print("Subs out of index ",i)
         break
 
-print("Total Score: ", score)
-
 NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
-print("Accuracy: ", NormalizedScore*100, "%")
+
+if NormalizedScore>1:
+    NormalizedScore = 1
+
+print("\nAccuracy: ", NormalizedScore*100, "%")
+
+if NormalizedScore > 0.9:
+    print("Perfect Synchronization")
+elif NormalizedScore > 0.6:
+    print("Good Synchronization")
+elif NormalizedScore > 0.4:
+    print("Not Good Synchronization")
+else:
+    print("Not Synchronized")
 
 os.remove("sub1.srt")
 os.remove("sub2.srt")
