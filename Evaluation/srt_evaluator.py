@@ -79,9 +79,9 @@ for i in range(len(subs1)-1):
             score = score +  maxReward*(1-d/threshold) # + 1
         else:
             score = score - 1
-            print("Check sub",i,"( minute:", int(subs1[i].start/60000),")",":",subs1[i].text )
+            print("Check sub",i+1,"( minute:", int(subs1[i].start/60000),")",":",subs1[i].text )
     except IndexError:
-        print("Subs out of Index. Last Index: ",i)
+        print("Subs out of Index. Last Index: ",i+1)
         break
 
 NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
