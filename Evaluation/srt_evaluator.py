@@ -49,17 +49,13 @@ j = 0
 k = 0
 maxReward = 1.5
 
-print("\nUnsynchronized Subs\n")
+print("\nReporting problematic subs\n")
 
 for i in range(len(subs1)-1):
 
     startFlag = True
     endFlag = True
 
-    # if srt files have different number of subs
-    if j >= len(subs2)-1 or k >= len(subs2)-1:
-        score = score - (len(subs1)-len(subs2))
-        break
     try:
         while subs2[j].start < subs1[i].start - threshold:
             j = j + 1
@@ -85,7 +81,7 @@ for i in range(len(subs1)-1):
             score = score - 1
             print("Check sub",i,"( minute:", int(subs1[i].start/60000),")",":",subs1[i].text )
     except IndexError:
-        print("Subs out of index ",i)
+        print("Subs out of Index. Last Index: ",i)
         break
 
 NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
@@ -96,13 +92,13 @@ if NormalizedScore>1:
 print("\nAccuracy: ", NormalizedScore*100, "%")
 
 if NormalizedScore > 0.9:
-    print("Perfect Synchronization")
+    print("Conclusion: Perfect Synchronization")
 elif NormalizedScore > 0.6:
-    print("Good Synchronization")
+    print("Conclusion: Good Synchronization")
 elif NormalizedScore > 0.4:
-    print("Not Good Synchronization")
+    print("Conclusion: Not Good Synchronization")
 else:
-    print("Not Synchronized")
+    print("Conclusion: Not Synchronized")
 
 os.remove("sub1.srt")
 os.remove("sub2.srt")
