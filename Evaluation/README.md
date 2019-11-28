@@ -9,5 +9,10 @@ pip install chardet
 python srt_evaluator.py file1.srt file2.srt
 
 <br>
-Return accuracy and score of synchronization between the two 
-input subtitles.
+Report of un-synchronized subs.
+Accuracy of synchronization between the two input subtitles.
+Overall descriptive conclusion of synchronization results.
+
+## Notes
+ 
+Sub-Dialogs that do not exist in both files are skipped without affecting accuracy.

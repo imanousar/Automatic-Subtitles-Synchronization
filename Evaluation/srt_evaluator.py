@@ -43,7 +43,7 @@ if subs2[0].start  > subs1[0].start:
 
 score = 0
 
-threshold = 1500  # msec
+threshold = 1000  # msec
 
 j = 0
 k = 0
@@ -52,7 +52,7 @@ maxReward = 1.5
 print("\nReporting problematic subs\n")
 
 for i in range(len(subs1)-1):
-
+    d = 0
     startFlag = True
     endFlag = True
 
@@ -64,7 +64,7 @@ for i in range(len(subs1)-1):
             startFlag = False
             j = j - 1
         else:
-            d = abs(subs2[j].start - subs1[i].start)/2
+            d = d + abs(subs2[j].start - subs1[i].start)/2
     
         while subs2[k].end < subs1[i].end - threshold:
             k = k + 1
@@ -76,7 +76,7 @@ for i in range(len(subs1)-1):
             d = d + abs(subs2[k].end - subs1[i].end)/2
     
         if startFlag == True and endFlag == True:
-            score = score + 1 # maxReward*(1-d/threshold) # + 1
+            score = score +  maxReward*(1-d/threshold) # + 1
         else:
             score = score - 1
             print("Check sub",i,"( minute:", int(subs1[i].start/60000),")",":",subs1[i].text )
@@ -87,7 +87,7 @@ for i in range(len(subs1)-1):
 NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
 
 if NormalizedScore>1:
-    NormalizedScore = 1
+    NormalizedScore = 0.99
 
 print("\nAccuracy: ", NormalizedScore*100, "%")
 
