@@ -1,7 +1,6 @@
 ## Install library
 
 - pip install pysubs2
-<br>
 - pip install chardet
 
 ### Run script and replace file with filename (1 arg only)
