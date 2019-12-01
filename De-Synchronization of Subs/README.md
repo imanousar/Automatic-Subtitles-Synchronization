@@ -8,5 +8,5 @@
 python srt_creator.py file.srt
 
 <br>
-Output 4 sub.srt files. The first one has 3 sec shifthing. The other 3 have
-a random shifting to left, different for each subtile in each .srt file
+Outputs 4 sub.srt files. The first one has -3 sec delay in total. The other 3 have 
+random delays at random timestamps, different for each subtile in each .srt file
