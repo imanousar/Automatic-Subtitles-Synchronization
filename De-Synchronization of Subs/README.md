@@ -5,7 +5,9 @@
 
 ### Run script and replace file with filename (1 arg only)
 
-python srt_creator.py file.srt
+```
+$ python srt_creator.py file.srt
+```
 
 <br>
 Outputs 4 sub.srt files. The first one has -3 sec delay in total. The other 3 have 
