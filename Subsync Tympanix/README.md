@@ -3,7 +3,7 @@
 # Instructions
 
 1.  Install python 3.6 .
-<br>
+	<br>
 2.  Run: pip install susbsync 
 	(Just to install the necessary libs)
 	<br>
