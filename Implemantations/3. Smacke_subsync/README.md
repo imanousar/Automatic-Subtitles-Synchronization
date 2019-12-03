@@ -1,6 +1,6 @@
 # Subsync by Smacke
 
-The repo can be found [here](https://github.com/smacke/subsync)
+The repo can be found [here](https://github.com/smacke/subsync).
 
 ## Installation
 
@@ -9,7 +9,7 @@ Windows 10 - Installlation (The same steps apply for Linux).
 - Install ffmpeg
 - Add ffmpeg to the path 
 
-> Instructions can be found [here](https://www.youtube.com/watch?v=qjtmgCb8NcE&t=363s)
+> Instructions can be found [here](https://www.youtube.com/watch?v=qjtmgCb8NcE&t=363s).
 
 
 Install subsync
@@ -17,12 +17,12 @@ Install subsync
 
 
 If it fails with error:
-> error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools"
+> error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools".
 
 
-Try the following
-- Download Visual Studio 2019 Community from [here](https://visualstudio.microsoft.com/downloads/)
-- Install C++ Desktopt tools
+Try the following:
+- Download Visual Studio 2019 Community from [here](https://visualstudio.microsoft.com/downloads/).
+- Install C++ Desktop tools.
 
 ## Using the code
 
