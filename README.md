@@ -1,1 +1,1 @@
-# Automatic-Subtitles-Synchronization-
+# Automatic-Subtitles-Synchronization
