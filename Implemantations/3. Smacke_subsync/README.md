@@ -4,7 +4,7 @@ The repo can be found [here](https://github.com/smacke/subsync).
 
 ## Installation
 
-Windows 10 - Installlation (The same steps apply for Linux).
+Windows 10 - Installation (The same steps apply for Linux as well).
 
 - Install ffmpeg
 - Add ffmpeg to the path 

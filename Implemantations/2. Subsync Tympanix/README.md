@@ -16,7 +16,10 @@
     and make sure that the .srt file has the 
     same name as the movie file.
 	<br>
-5.  Place srt_evaluator.py and the optimum subtitle 
+5.	Run: python subsync-master\subsync\bin\subsync <moviefile.mp4>
+	<br>
+# Optional Steps
+6.  Place srt_evaluator.py and the optimum subtitle 
 	in the movie's directory.
 	<br>
-6.  Run: python tympanix_subsync.py <filename.mp4> <optimum_sub.srt>
+7.  Run: python tympanix_subsync.py <filename.mp4> <optimum_sub.srt>
