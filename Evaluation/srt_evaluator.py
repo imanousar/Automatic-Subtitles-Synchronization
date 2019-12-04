@@ -91,7 +91,7 @@ NormalizedScore = (score+(len(subs1)-1))/(2*(len(subs1)-1))
 
 # Accuray may become greater than 100% --> max{Accuracy}=99%
 if NormalizedScore>1:
-    NormalizedScore = 0.99
+    NormalizedScore = 1.00
 
 print("\nAccuracy: ", NormalizedScore*100, "%")
 
