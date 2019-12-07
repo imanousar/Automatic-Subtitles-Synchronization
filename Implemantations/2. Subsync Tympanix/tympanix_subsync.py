@@ -1,15 +1,5 @@
-#import sys, os
-
-#if(len(sys.argv) != 3):
-#    sys.exit("Excepted 2 arguments only and not NULL!")
-
-#os.system('python subsync-master\\subsync\\bin\\subsync '+sys.argv[1])
-#os.system('python srt_evaluator.py '+sys.argv[1][:-4]+'.srt '+sys.argv[2])
-
-
 import os
 import time
-import sys
 import pysubs2 # Needs to be installed
 import chardet # Needs to be installed
 import codecs
@@ -39,24 +29,26 @@ def test():
     for i in range(len(srts)):
         
         encodeToUTF8(srts[i], movie[0].split('.')[0]+".srt")
-		
         start = time.time()
         os.system('python ..\\subsync-master\\subsync\\bin\\subsync '+movie[0])
         end = time.time()
         elapsed = end - start
         time.sleep(3)
-        acc = evaluate(ref, srts[i])
+        encodeToUTF8(movie[0].split('.')[0]+".srt",srts[i].split('.')[0]+"_synced.srt")
+        os.remove(movie[0].split('.')[0]+".srt")
+        acc = evaluate(ref, srts[i].split('.')[0]+"_synced.srt")
         print("Time: %f Accuracy: %d" %(elapsed,acc))
 
         time_sec.append(elapsed)
         accuracy.append(acc)
+        os.remove(srts[i].split('.')[0]+"_synced.srt")
 
     for i in range(len(time_sec)):
         print("File: %d Time: %f Accuracy: %f Sub File: %s" % (i+1, time_sec[i], accuracy[i],srts[i]))
     print("Mean time: %f" % (sum(time_sec)/len(time_sec)))
     print("Mean acc: %f" % (sum(accuracy)/len(accuracy)))
 
-    with open("o.csv","a") as fp:
+    with open("stats.csv","a") as fp:
         wr = csv.writer(fp, dialect='excel')
         wr.writerow(time_sec)
         wr.writerow(accuracy)
