@@ -5,7 +5,7 @@
 
 ## Installation
 
-    git clone
+    git clone https://github.com/Koenkk/PyAMC.git
     cd PyAMC
     python3 -m venv ./
     source bin/activate
