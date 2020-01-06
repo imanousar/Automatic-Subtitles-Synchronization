@@ -21,3 +21,6 @@
 3. Make sure that the .srt file has the same name as the movie file.
 4. Run: 
         python subsync-master\subsync\bin\subsync <moviefile.mp4>
+
+## Ackowlegdements
+Repo: https://github.com/tympanix/subsync
