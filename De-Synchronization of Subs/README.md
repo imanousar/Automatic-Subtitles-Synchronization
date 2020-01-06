@@ -1,3 +1,13 @@
+## Description
+
+This is an algorthim to unsynchronise a subtitle file in a srt format.
+It was used to generate the subtitles dataset of the project.
+
+<br>
+Outputs 4 sub.srt files. The first one has -3 sec delay in total. The other 3 have 
+random delays at random timestamps, different for each subtile in each .srt file
+
+
 ## Install library
 
 - pip install pysubs2
@@ -9,6 +19,3 @@
 $ python srt_creator.py file.srt
 ```
 
-<br>
-Outputs 4 sub.srt files. The first one has -3 sec delay in total. The other 3 have 
-random delays at random timestamps, different for each subtile in each .srt file
