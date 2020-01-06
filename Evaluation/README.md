@@ -1,13 +1,18 @@
+## Descrtiption
+
+This is a script to evaluate the accuracy of a subtitle in srt format. It 
+requires a correct-synchronised subtitle (Ground Truth) for the evaluation.
+
 ## Install libraries
 
-pip install pysubs2
-<br>
-pip install chardet
+- `pip install pysubs2`
+- `pip install chardet`
 
-### Run script and replace file1 and file2 by the sub's filenames (2 args)
+### Run script and replace file1 and file2 by the subs's filenames (2 args)
 
+```bash
 python srt_evaluator.py file1.srt file2.srt
-
+```
 <br>
 Report of un-synchronized subs.
 Accuracy of synchronization between the two input subtitles.
