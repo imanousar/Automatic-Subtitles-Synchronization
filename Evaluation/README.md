@@ -8,15 +8,17 @@ requires a correct-synchronised subtitle (Ground Truth) for the evaluation.
 - `pip install pysubs2`
 - `pip install chardet`
 
-### Run script and replace file1 and file2 by the subs's filenames (2 args)
+## Run script and replace file1 and file2 by the subs's filenames (2 args)
 
 ```bash
 python srt_evaluator.py file1.srt file2.srt
 ```
-<br>
-Report of un-synchronized subs.
-Accuracy of synchronization between the two input subtitles.
-Overall descriptive conclusion of synchronization results.
+
+## Output
+
+- Report of un-synchronized subs.
+- Accuracy of synchronization between the two input subtitles.
+- Overall descriptive conclusion of synchronization results.
 
 ## Notes
 
