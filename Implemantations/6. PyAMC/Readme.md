@@ -24,3 +24,6 @@
 3. run: (substitute \<folder_path\> with the movie folder and \<language\> with the ISO 639-1 code of the language
     
         python pyamc.py auto_sync_subtitles --path <folder_path> --language <language>
+
+## Ackowlegdements
+Repo: https://github.com/Koenkk/PyAMC.git
