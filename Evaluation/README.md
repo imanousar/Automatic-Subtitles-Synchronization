@@ -1,4 +1,4 @@
-## Descrtiption
+## Description
 
 This is a script to evaluate the accuracy of a subtitle in srt format. It 
 requires a correct-synchronised subtitle (Ground Truth) for the evaluation.
