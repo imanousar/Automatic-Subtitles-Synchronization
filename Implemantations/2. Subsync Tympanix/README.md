@@ -2,14 +2,14 @@
 
 ## Installation
     
-# Download Repo #
+### Download Repo
     git clone https://github.com/tympanix/subsync
     
-# Optional - Create a new virtual environment #
+### Optional - Create a new virtual environment
     python3 -m venv ./
     source bin/activate
     
-# Install Requirements #
+### Install Requirements
     pip install -r requirements.txt
 
 
