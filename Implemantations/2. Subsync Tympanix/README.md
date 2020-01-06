@@ -12,7 +12,9 @@
 	<br>
 	Link: https://github.com/tympanix/subsync
 	<br>
-4.  Make sure that the .srt file has the 
+4.  pip install -r requirements
+	<br>
+5.  Make sure that the .srt file has the 
     same name as the movie file.
 	<br>
-5.	Run: python subsync-master\subsync\bin\subsync <moviefile.mp4>
+6.	Run: python subsync-master\subsync\bin\subsync <moviefile.mp4>
