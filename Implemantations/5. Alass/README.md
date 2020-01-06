@@ -9,3 +9,6 @@ Automatic Language-Agnostic Subtitle Synchronization
 4. cargo build
 5. Add moviefile,subfile to alass directory
 6. Run: cargo run -- movie.mp4 input.srt output.srt
+
+## Ackowlegdements
+Repo: https://github.com/kaegi/alass
