@@ -17,7 +17,8 @@
 ### If Python 3.6.xx is installed in your System (not Venv!)
 
 1. Choose Model (GRU: Gated Recurrent Unit | BLSTM: Bidirectional Long Short-Term Memory)
-2. 
+2. Copy subsync.pb file (found inside the chosen model directory) and paste it into:
+    %USERPROFILE%\AppData\Local\Programs\Python\Python36\Lib\site-packages\subsync
 4. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
 3. Open terminal and run: 
         subsync moviefile.mp4
