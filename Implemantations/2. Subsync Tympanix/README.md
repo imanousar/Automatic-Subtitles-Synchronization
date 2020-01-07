@@ -8,6 +8,7 @@
 ### Optional - Create a new virtual environment
     python3 -m venv ./
     source bin/activate
+    install Python 3.6
     
 ### Install Repo
     pip install subsync
