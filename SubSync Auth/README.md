@@ -5,7 +5,7 @@
 ### 1. Optional - Create a new virtual environment
 Install virtualenv if not installed
 
-        pip install virtualenv 
+	pip install virtualenv 
 	
 Create new  Venv ie. named "venv"
 
@@ -17,10 +17,10 @@ Activate V. Environment
 
 ### 2. Install SubSync Repo
     
-    pip install subsync
+	pip install subsync
 
 ### 3. Install ffmpeg
-    https://www.ffmpeg.org/download.html
+	https://www.ffmpeg.org/download.html
 
 ## Execution
 
