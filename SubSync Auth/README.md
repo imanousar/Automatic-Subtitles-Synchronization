@@ -44,8 +44,10 @@ Create a folder named `training` in `subsync/subsync/model` and copy the movies 
 Make sure that the .srt files have the same name as the movie files (ie. moviefile.mp4 -> moviefile.srt)
 
 While the venv is activated, run:
-		python train_data.py
-        python train_ann.py 
+
+	python train_data.py
+	python train_ann.py
+
 The trained model `ann.hdf5` will be created in the `subsync/subsync/model/out` folder. In order to use it you need to convert 
 it to `.pb` format. To do this, so it can be used by the app, run  `python convert.py` while the `ann.hdf5` is still inside the
 `subsync/subsync/model/out` folder.
