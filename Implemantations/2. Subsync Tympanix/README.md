@@ -1,27 +1,34 @@
 # Subsync by tympanix
 
-## Installation
+## Installation - Windows (Checked for Python 3.6)
     
-### Download Repo
-    git clone https://github.com/tympanix/subsync
+### 1. Optional - Create a new virtual environment
+Install virtualenv if not installed
+
+	pip install virtualenv 
+	
+Create new  Venv ie. named "venv"
+
+	virtualenv --python C:\\Path\\To\\Python\\python.exe venv
+	
+Activate V. Environment
+
+	source .\\venv\\Scripts\\activate
+
+### 2. Install SubSync Repo
     
-### Optional - Create a new virtual environment (Install Python 3.6)
-    python3 -m venv ./
-    source bin/activate
-    
-### Install Repo
-    pip install subsync
+	pip install subsync
 
-### Install ffmpeg
-    https://www.ffmpeg.org/download.html
+### 3. Install ffmpeg
+	https://www.ffmpeg.org/download.html
 
-## Execution
+## Execution - Windows (Checked for Python 3.6)
 
-1. Place the downloaded directory inside the movie's directory.
-2. Activate the virtual environment
-3. Make sure that the .srt file has the same name as the movie file.
-4. Open terminal and run: 
-        python subsync\bin\subsync moviefile.mp4
+1. ( Activate the virtual environment )
+2. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
+3. Open terminal and run:
+
+		subsync moviefile.mp4 
 
 ## Ackowlegdements
 Repo: https://github.com/tympanix/subsync
