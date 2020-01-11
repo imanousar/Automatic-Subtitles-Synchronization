@@ -1,41 +1,48 @@
 # SubSync Auth
 
-## Installation
+## Installation - Windows (Checked for Python 3.6)
     
-### Optional - Create a new virtual environment (Install Python 3.6 on Venv!)
-    python3 -m venv ./
-    source bin/activate
-    
-### Install SubSync Repo
+1. Optional - Create a new virtual environment
+    pip install virtualenv # if not installed
+	virtualenv --python C:\\Path\\To\\Python\\python.exe venv # Create new  Venv ie. named "venv"
+	source .\\venv\\Scripts\\activate # Activate V. Environment
+
+2. Install SubSync Repo
     pip install subsync
 
-### Install ffmpeg
+3. Install ffmpeg
     https://www.ffmpeg.org/download.html
 
 ## Execution
 
-### If Python 3.6.xx is installed in your System (not Venv!)
-
-1. Choose Model (GRU: Gated Recurrent Unit | BLSTM: Bidirectional Long Short-Term Memory)
-2. Copy subsync.pb file (found inside the chosen model directory) and paste it into:
-    %USERPROFILE%\AppData\Local\Programs\Python\Python36\Lib\site-packages\subsync
-4. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
-3. Open terminal and run: 
-        subsync moviefile.mp4
-
-### If Python 3.xx.xx is installed in your System (not Venv!) 
-
-1. Choose Model (GRU: Gated Recurrent Unit | BLSTM: Bidirectional Long Short-Term Memory)
-2. Copy the model directory (found inside the GRU or BLSTM directory) inside the movie's directory.
+1. Choose Model (BGRU: Bidirectional Gated Recurrent Unit | LSTM: Long Short-Term Memory)
+2. Copy the BGRU/LSTM directory inside the movie's directory.
 3. ( Activate the virtual environment )
 4. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
 5. Open terminal and run: 
-        python model\subsync moviefile.mp4
+        python BGRU\subsync\bin\subsync moviefile.mp4 
+	or 
+		python LSTM\subsync\bin\subsync moviefile.mp4
 
 
-## FOR LINUX
+## Training Process - Windows (Checked for Python 3.6)
+   
+Our training scripts are the `train_ann.py` files found in `BGRU/train` and `LSTM/train` directories.
+Create a folder named `training` in `subsync/subsync/model` and copy the movies that you want to use for training the ann in it.
+Make sure that the .srt files have the same name as the movie files (ie. moviefile.mp4 -> moviefile.srt)
 
-install ffmpeg
+While the venv is activated, run:
+		python train_data.py
+        python train_ann.py 
+The trained model `ann.hdf5` will be created in the `subsync/subsync/model/out` folder. In order to use it you need to convert 
+it to `.pb` format. To do this, so it can be used by the app, run  `python convert.py` while the `ann.hdf5` is still inside the
+`subsync/subsync/model/out` folder.
+The converted model `subsync.pb` will be created in the `subsync/subsync/model/out` folder.
+Replace the existing `subsync.pb` file by the one you've just created.
+
+## Installation - Linux
+
+### Install ffmpeg
         
         sudo apt install ffmpeg
         
@@ -43,7 +50,7 @@ install ffmpeg
 Using Python3.6.9
 
 
-### subsync app for synchronizartion
+### SubSync App for Synchronization
 
 Create the folder for the subsync app
         
@@ -58,19 +65,18 @@ Install subsync
         pip install subsync
 
 Using our models  
-Our models are the `subsync.pb` file inside `/GRU/model` and `/BLSTM/model`.
-Copy the model you want to use to `subsync_app/lib/python3.6/site-packages/subsync`
-and replace the existing `subsync.pb`
+Our models are the `subsync.pb` files found inside `/BGRU/model` or `/LSTM/model`.
+Copy the model that you want to use to `subsync_app/lib/python3.6/site-packages/subsync`
+and replace the existing `subsync.pb` file.
 
-In order to run the app to sync subtitles the movie must be in the same folder and have the same name
-e.g.  my_movie.mp4 , my_movie.srt
+Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt)
 
     cd subsync_app
     source bin/activate
     subsync {path_to_the_movie}
 subsync replaces the given subtitle with the synced one
 
-### subsync neural net train
+### Subsync - Artificial Neural Network Train
 
 clone the repo https://github.com/tympanix/subsync.git and install the packages
 
@@ -79,18 +85,18 @@ clone the repo https://github.com/tympanix/subsync.git and install the packages
     python3 -m venv ./
     pip install -r requirements.txt
    
-Out training files are the `train_ann.py` in `GRU/train` and `BLSTM/train`
+Our training scripts are the `train_ann.py` in `BGRU/train` and `LSTM/train`
 Copy the one you want in `subsync/subsync/model`
-Create the folder `training` in `subsync/subsync/model` and copy the movies you want to use for training the nn in it.
-The movies and the corresponding subtitles should have the same name e.g. movie1.mp4, movie1.srt etc
+Create the folder `training` in `subsync/subsync/model` and copy the movies that you want to use for training the nn in it.
+Make sure that the .srt files have the same name as the movie files (ie. moviefile.mp4 -> moviefile.srt)
 
-While still inside the venv run
-    
+While the venv is activated, run:
+		python train_data.py 
         python train_ann.py 
-The trained model `ann.hdf5` will be in the `subsync/subsync/model/out` folder
-To convert it in `.pb` format so it can be used by the app run  `python convert.py` while the `ann.hdf5` is still inside the
-`subsync/subsync/model/out` folder
-The converted model `subsync.pb` will be in the `subsync/subsync/model/out` folder
+The trained model `ann.hdf5` will be created in the `subsync/subsync/model/out` folder. In order to use it you need to convert 
+it to `.pb` format. To do this, so it can be used by the app, run  `python convert.py` while the `ann.hdf5` is still inside the
+`subsync/subsync/model/out` folder.
+The converted model `subsync.pb` will be created in the `subsync/subsync/model/out` folder
 
 
 ## Ackowlegdements
