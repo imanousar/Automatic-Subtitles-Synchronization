@@ -2,15 +2,24 @@
 
 ## Installation - Windows (Checked for Python 3.6)
     
-1. Optional - Create a new virtual environment
-    pip install virtualenv # if not installed
-	virtualenv --python C:\\Path\\To\\Python\\python.exe venv # Create new  Venv ie. named "venv"
-	source .\\venv\\Scripts\\activate # Activate V. Environment
+### 1. Optional - Create a new virtual environment
+Install virtualenv if not installed
 
-2. Install SubSync Repo
+        pip install virtualenv 
+	
+Create new  Venv ie. named "venv"
+
+	virtualenv --python C:\\Path\\To\\Python\\python.exe venv
+	
+Activate V. Environment
+
+	source .\\venv\\Scripts\\activate
+
+### 2. Install SubSync Repo
+    
     pip install subsync
 
-3. Install ffmpeg
+### 3. Install ffmpeg
     https://www.ffmpeg.org/download.html
 
 ## Execution
@@ -20,9 +29,11 @@
 3. ( Activate the virtual environment )
 4. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
 5. Open terminal and run: 
+
         python BGRU\subsync\bin\subsync moviefile.mp4 
-	or 
-		python LSTM\subsync\bin\subsync moviefile.mp4
+or
+
+	python LSTM\subsync\bin\subsync moviefile.mp4
 
 
 ## Training Process - Windows (Checked for Python 3.6)
