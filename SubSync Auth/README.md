@@ -28,12 +28,13 @@ Activate V. Environment
 2. Copy the BGRU/LSTM directory inside the movie's directory.
 3. ( Activate the virtual environment )
 4. Make sure that the .srt file has the same name as the movie file (ie. moviefile.mp4 -> moviefile.srt).
-5. Open terminal and run: 
+5. Open terminal and run:
 
-        python BGRU\subsync\bin\subsync moviefile.mp4 
-or
+		python BGRU\subsync\bin\subsync moviefile.mp4 
 
-	python LSTM\subsync\bin\subsync moviefile.mp4
+	or
+
+		python LSTM\subsync\bin\subsync moviefile.mp4
 
 
 ## Training Process - Windows (Checked for Python 3.6)
