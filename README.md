@@ -26,11 +26,11 @@ Some demo videos of our LSTM implemantation.
 
 Before Synchronization (minus 3 seconds shift) |  After Synchronization
 :-------------------------:|:-------------------------:
-[![AVT Project AUTh SubSync - LSTM - beforeSync minus3sec](https://img.youtube.com/vi/a8OTsI-eJug/0.jpg)](https://www.youtube.com/watch?v=a8OTsI-eJug)  | [![AVT Project AUTh SubSync - LSTM - afterSync minus3sec](https://img.youtube.com/vi/xZDPxIWOm6c/0.jpg)](https://www.youtube.com/watch?v=xZDPxIWOm6c)
+[![AVT Project AUTh SubSync - LSTM - beforeSync minus3sec](https://img.youtube.com/vi/a8OTsI-eJug/0.jpg)](https://www.youtube.com/watch?v=a8OTsI-eJug "Before Synchronization Video - Click to Watch") | [![AVT Project AUTh SubSync - LSTM - afterSync minus3sec](https://img.youtube.com/vi/xZDPxIWOm6c/0.jpg)](https://www.youtube.com/watch?v=xZDPxIWOm6c "After Synchronization Video - Click to Watch")
 
 Before Synchronization (random shift in each dialogue) |  After Synchronization
 :-------------------------:|:-------------------------:
-[![AVT Project AUTh SubSync - LSTM - beforeSync random shift](https://img.youtube.com/vi/9PJcPk_XylQ/0.jpg)](https://www.youtube.com/watch?v=9PJcPk_XylQ)  | [![AVT Project AUTh SubSync - LSTM - afterSync random shift](https://img.youtube.com/vi/oK_NM49ybaA/0.jpg)](https://www.youtube.com/watch?v=oK_NM49ybaA)
+[![AVT Project AUTh SubSync - LSTM - beforeSync random shift](https://img.youtube.com/vi/9PJcPk_XylQ/0.jpg)](https://www.youtube.com/watch?v=9PJcPk_XylQ "Before Synchronization Video - Click to Watch")  | [![AVT Project AUTh SubSync - LSTM - afterSync random shift](https://img.youtube.com/vi/oK_NM49ybaA/0.jpg)](https://www.youtube.com/watch?v=oK_NM49ybaA "After Synchronization Video - Click to Watch")
 
 
 ## Special Thanks ✨
