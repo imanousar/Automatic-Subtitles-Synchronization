@@ -16,13 +16,13 @@ You can find more details about our work in the report file and in each folder s
 
 - A folder to de-synchronize subtitles.
 - A folder to evaluate a subtitle.
-- A folder with implemantations which synchronize subtitles.
-- A folder with our results testing the implemantation.
-- A folder with our work to try to alter one implemantation and improve it.
+- A folder with implementations which synchronize subtitles.
+- A folder with our results testing the implementation.
+- A folder with our work to try to alter one implementation and improve it.
 
 
 ## Demo 
-Some demo videos of our LSTM implemantation.
+Some demo videos of our LSTM implementation.
 
 Before Synchronization (minus 3 seconds shift) |  After Synchronization
 :-------------------------:|:-------------------------:
@@ -39,7 +39,7 @@ Before Synchronization (random shift in each dialogue) |  After Synchronization
 - [Subsync Smacke](https://github.com/smacke/subsync) 	
 - [Subsync Sc0ty](https://github.com/sc0ty/subsync)
 - [Alass	Kaegi](https://github.com/kaegi/alass)
-- [PyAMC Koenkk](https://github.com/imanousar/Automatic-Subtitles-Synchronization/tree/master/Implemantations/6.%20PyAMC)
+- [PyAMC Koenkk](https://github.com/imanousar/Automatic-Subtitles-Synchronization/tree/master/Implementations/6.%20PyAMC)
 
 ## Licenses
 
